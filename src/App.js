@@ -15,15 +15,44 @@ import OneCat from './OneCat';
 import NavBar from './NavBar';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      catList: [
+        'Oakley',
+        'Mila',
+        'Whisper',
+        'Neo'
+      ],
+      catToys: {
+        'Oakley': [
+          'string',
+          'bookmarks',
+          'ice',
+          'daddy/s face'
+        ],
+        'Milla': [
+          'drool'
+        ],
+        'Whisper' [
+          'no toyzz'
+        ],
+      }
+    };
+  };
   render() {
     return (
       <Router>
-       <div className="App">
+       <div>
           <NavBar />
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/Cats" component={Cats} />
-          <Route path="/Cats/:catName" component={OneCat} />
+          <Route path="/cats" render={(props) => {
+            return <Cats catList={Object.keys(this.state.catToys)} {...props} />
+          }} />
+          <Route path="/Cats/:catName" render={(props) => {
+            return <OneCat toys={this.state.catToys} {...props} />
+          }} />
       </div>
       </Router>
     );
