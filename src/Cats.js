@@ -6,7 +6,7 @@ const Cats = (props) => {
     const catListItems = props.catList.map(catName => {
         return (
             <li>
-            <Link to={`/cats/${catName}`}>(catName)</Link>
+            <Link to={`/cats/${catName}`}>{catName}</Link>
         </li>
       );
     });

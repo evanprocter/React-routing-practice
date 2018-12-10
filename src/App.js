@@ -34,7 +34,7 @@ class App extends Component {
         'Milla': [
           'drool'
         ],
-        'Whisper' [
+        'Whisper': [
           'no toyzz'
         ],
       }

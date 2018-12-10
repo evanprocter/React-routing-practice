@@ -1,10 +1,20 @@
 import React from 'react';
 
 const OneCat = (props) => {
+    const allToys = props.toys;
+    const catName = props.match.params.catName;
+    const myToys = allToys[catName];
     return (
-        <h2>
-            {props.match.params.catName}
-        </h2>
+        <div>
+            <h2>
+                {catName}
+            </h2>
+            <ul>
+                {myToys.map((toy) => {
+                    return <li>{toy}</li>
+                })}
+            </ul>
+         </div>
     );
 };
 
