@@ -1,9 +1,6 @@
 import React from 'react';
 
 const OneCat = (props) => {
-    console.log(props);
-    console.log("those were the cats props");
-    
     const allToys = props.toys;
     const catName = props.match.params.catName;
     const myToys = allToys[catName];

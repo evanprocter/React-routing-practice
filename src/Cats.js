@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Cats = (props) => {
 
-    const catListItems = props.catList.map(catName => {
+    const catListItems = props.catList.map((catName, index) => {
         return (
-            <li>
+          <li key={index}>
             <Link to={`/cats/${catName}`}>{catName}</Link>
-        </li>
+          </li>
       );
     });
 

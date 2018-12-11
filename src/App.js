@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
 import {                    // three important components
@@ -76,7 +76,9 @@ class App extends Component {
           <Route path="/Cats/:catName" render={(props) => {
             return <OneCat toys={this.state.catToys} {...props} />
           }} />
-          <Route path="/dogs" component={Dogs} />
+          <Route path="/dogs" render={(props) => {
+            return <Dogs dogList={Object.keys(this.state.dogToys)} {...props} />
+          }} />
       </div>
       </Router>
     );
