@@ -32,11 +32,33 @@ class App extends Component {
           'daddy/s face'
         ],
         'Milla': [
-          'drool'
+          'drool',
+          'hammocks'
         ],
         'Whisper': [
           'no toyzz'
         ],
+        'Neo': [
+          'blood',
+          'sweat',
+          'tears'
+        ]
+      },
+      dogToys: {
+        'Skyler': [
+          'tennis balls',
+          'shoes'
+        ],
+        'Leroy': [
+          'squeeky toy',
+          'love',
+          'hugs'
+        ],
+        'Chief': [
+          'blood',
+          'sweat',
+          'tears'
+        ]
       }
     };
   };
