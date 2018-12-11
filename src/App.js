@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import {                    // three important components
@@ -14,17 +14,18 @@ import Cats from './Cats';
 import OneCat from './OneCat';
 import NavBar from './NavBar';
 import Dogs from './Dogs';
+import OneDog from './OneDog';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      catList: [
-        'Oakley',
-        'Mila',
-        'Whisper',
-        'Neo'
-      ],
+      // catList: [
+      //   'Oakley',
+      //   'Mila',
+      //   'Whisper',
+      //   'Neo'
+      // ],
       catToys: {
         'Oakley': [
           'string',
@@ -45,21 +46,33 @@ class App extends Component {
           'tears'
         ]
       },
-      dogToys: {
-        'Skyler': [
-          'tennis balls',
-          'shoes'
-        ],
-        'Leroy': [
-          'squeeky toy',
-          'love',
-          'hugs'
-        ],
-        'Chief': [
-          'blood',
-          'sweat',
-          'tears'
-        ]
+      dogs: {
+        'Skyler': {
+          'owner': 'Evan',
+          'toys': [
+            'tennis balls',
+            'shoes'
+          ]
+        },
+        'Leroy': {
+          'owner': 'Ian',
+          'toys': [
+            'squeeky toy',
+            'love',
+            'hugs'
+          ]
+        },
+        'Ladybird': {
+          'owner': 'Hank',
+          'toys': [
+            'martinis',
+            'self-loathing'
+          ] 
+        },
+        'Judge': {
+          'owner': 'Clare',
+          'toys': []
+        }
       }
     };
   };
@@ -73,11 +86,15 @@ class App extends Component {
           <Route path="/cats" render={(props) => {
             return <Cats catList={Object.keys(this.state.catToys)} {...props} />
           }} />
-          <Route path="/Cats/:catName" render={(props) => {
+          <Route path="/cats/:catName" render={(props) => {
             return <OneCat toys={this.state.catToys} {...props} />
           }} />
           <Route path="/dogs" render={(props) => {
-            return <Dogs dogList={Object.keys(this.state.dogToys)} {...props} />
+            return (<Dogs dogList={Object.keys(this.state.dogs)} {...props} />);
+          }} />
+
+          <Route path="/dogs/:dogName" render={(props) => {
+            return (<OneDog dogInfo={this.state.dogs} {...props} />);
           }} />
       </div>
       </Router>
