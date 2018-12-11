@@ -13,6 +13,7 @@ import About from './About';
 import Cats from './Cats';
 import OneCat from './OneCat';
 import NavBar from './NavBar';
+import Dogs from './Dogs';
 
 class App extends Component {
   constructor(props) {
@@ -75,6 +76,7 @@ class App extends Component {
           <Route path="/Cats/:catName" render={(props) => {
             return <OneCat toys={this.state.catToys} {...props} />
           }} />
+          <Route path="/dogs" component={Dogs} />
       </div>
       </Router>
     );
