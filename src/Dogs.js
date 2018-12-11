@@ -13,7 +13,7 @@ const Dogs = (props) => {
 
     return(
         <React.Fragment>
-            <h1>DAAAGGGGGSS</h1>
+            <h1>DAAAWWWGGGGGSS</h1>
             <ul>
                 {dogListItems}
             </ul>

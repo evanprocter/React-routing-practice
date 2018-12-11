@@ -79,7 +79,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-       <div>
+        <div>
           <NavBar />
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
@@ -96,7 +96,8 @@ class App extends Component {
           <Route path="/dogs/:dogName" render={(props) => {
             return (<OneDog dogInfo={this.state.dogs} {...props} />);
           }} />
-      </div>
+
+        </div>
       </Router>
     );
   }
